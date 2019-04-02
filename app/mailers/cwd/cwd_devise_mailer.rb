@@ -4,7 +4,7 @@ class CwdDeviseMailer < Devise::Mailer
   default from: 'curtdunne@gmail.com'
   default reply_to: 'curtdunne@gmail.com'
 
-  layout 'mailer_rmtwrk'
+  layout 'mailer_cwd'
 
   #############################
   # CONFIRMATION EMAIL
@@ -15,7 +15,7 @@ class CwdDeviseMailer < Devise::Mailer
     @token = token
     @to_email = @individual.email
 
-    template = render_to_string(template: "mailers/rmtwrk/confirmation_instructions")
+    template = render_to_string(template: "mailers/cwd/confirmation_instructions")
     premailer = Premailer.new(template, :with_html_string => true, :warn_level => Premailer::Warnings::SAFE)
 
     mg_client = Mailgun::Client.new
