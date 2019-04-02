@@ -15,7 +15,7 @@ class CwdDeviseMailer < Devise::Mailer
     @token = token
     @to_email = @individual.email
 
-    template = render_to_string(template: "mailers/cwd/confirmation_instructions")
+    template = render_to_string(template: "views/layouts/mailer_cwd")
     premailer = Premailer.new(template, :with_html_string => true, :warn_level => Premailer::Warnings::SAFE)
 
     mg_client = Mailgun::Client.new
