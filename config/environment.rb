@@ -5,11 +5,11 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :port           => ENV['MAILGUN _SMTP_PORT'],
-  :addresses      => ENV['MAILGUN _SMTP_SERVER'],
-  :user_name      => ENV['MAILGUN _SMTP_LOGIN'],
-  :password       => ENV['MAILGUN _SMTP_PASSWORD'],
+  :port           => ENV['MAILGUN_SMTP_PORT'],
+  :addresses      => ENV['MAILGUN_SMTP_SERVER'],
+  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
   :domain         => 'photo-app-dunne.herokuapp.com',
   :authentication => :plain,
 }
-ActionMailer::Base.delivery_method = :smtp 
+ActionMailer::Base.delivery_method = :smtp
