@@ -76,7 +76,7 @@ Rails.application.configure do
     :domain         => 'photo-app-dunne.herokuapp.com',
     :authentication => :plain,
   }
-  config.action_mailer.delivery_method = { :smtp }
+  config.action_mailer.delivery_method = :smtp 
 
   # ActionMailer::Base.smtp_settings = {
   #   :port           => ENV['MAILGUN_SMTP_PORT'],
