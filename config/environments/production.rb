@@ -67,18 +67,9 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => 'photo-app-dunne.herokuapp.com' }
+  config.action_mailer.delivery_method = :mailgun
 
-  config.action_mailer.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :addresses      => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'photo-app-dunne.herokuapp.com',
-    :authentication => :plain,
-  }
-  config.action_mailer.delivery_method = :smtp 
-
-  # ActionMailer::Base.smtp_settings = {
+  # config.action_mailer.smtp_settings = {
   #   :port           => ENV['MAILGUN_SMTP_PORT'],
   #   :addresses      => ENV['MAILGUN_SMTP_SERVER'],
   #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
@@ -86,6 +77,16 @@ Rails.application.configure do
   #   :domain         => 'photo-app-dunne.herokuapp.com',
   #   :authentication => :plain,
   # }
+  # config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :addresses      => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'photo-app-dunne.herokuapp.com',
+    :authentication => :plain,
+  }
   # ActionMailer::Base.delivery_method = :smtp
 
   # Ignore bad email addresses and do not raise email delivery errors.
