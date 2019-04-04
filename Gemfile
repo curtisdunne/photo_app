@@ -7,6 +7,7 @@ ruby '2.6.0'
 gem 'rails', '~> 5.2.3'
 # Use Postgres as the database for Active Record
 gem 'pg'
+
 # used to protect Postgres credentials
 gem 'dotenv-rails'
 
@@ -14,6 +15,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
+gem 'stripe', '~> 4.12'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
